@@ -1,0 +1,31 @@
+{
+    "name": "seek-x2y/dingxiangmama-sdk",
+    "description": "丁香妈妈 SDK",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "wmc",
+            "email": "wu_1511@163.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "hanson/foundation-sdk": "3.0.0",
+        "ext-json": "*",
+        "symfony/validator": "^5.1",
+        "nesbot/carbon": "^2.39"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Seekx2y\\DxmamaSDK\\": "./src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Seekx2y\\Tests\\": "./tests"
+        }
+    }
+}
