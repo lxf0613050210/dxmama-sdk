@@ -15,22 +15,26 @@ composer require seek-x2y/dxmama-sdk -vvv
 本扩展包以不同参数区分是跨境还是一般贸易
 ```php
 // 提供supplierId这种是跨境
-/*
 $config = [
-    'supplierId' => '',
-    'token' => '',
-    'debug' => true, // 是否查看http请求详情
-];*/
-// 这种是一般贸易
-$config = [
-    'appkey' => '',
-    'appsecret' => '',
+    'common' => [
+        'supplierId' => '',
+    ],
     'token' => '',
     'debug' => true, // 是否查看http请求详情
 ];
+// 这种是一般贸易
+/*
+$config = [
+    'common' => [
+        'appkey' => '',
+        'appsecret' => '',
+    ],
+    'token' => '',
+    'debug' => true, // 是否查看http请求详情
+];*/
 
-$api = new Dxmama($this->config);
-$res = $api['orders']->getOrderList();
+$api    = new Dxmama($config);
+$res    = $api->crossBorderOrders(Carbon::now()->subDay(), Carbon::now());
 var_dump($res);
 ```
 
